@@ -31,8 +31,9 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
+
         Post::create([
             'title'=> $request->input('title'),
             'text'=> $request->input('text'),
