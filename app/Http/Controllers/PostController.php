@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\StorePostRequest;
 use App\Http\Middleware\IsAdminMiddleware;
 
 
@@ -34,11 +35,14 @@ class PostController extends Controller
     public function store(StorePostRequest $request)
     {
 
-        Post::create([
-            'title'=> $request->input('title'),
-            'text'=> $request->input('text'),
-            'category_id'=> $request->input('category_id')
-        ]);
+        // Post::create([
+        //     'title'=> $request->input('title'),
+        //     'text'=> $request->input('text'),
+        //     'category_id'=> $request->input('category_id')
+        // ]);
+
+        Post::create($request->validated()); 
+
 
         return redirect()->route('posts.index');
     }
