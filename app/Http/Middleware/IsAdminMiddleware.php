@@ -5,6 +5,9 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\CategoryController;
+
 
 class IsAdminMiddleware
 {
